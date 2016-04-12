@@ -9,18 +9,18 @@
 ## Thanks
     This package is based on @heerasheikh post :
     http://heera.it/laravel-5-1-x-acl-middleware#.Vwxunpl95TH
-
+    with some fixes , improvment and interface 
 ## Installation
 
 1.  Run
 ``` bash
-    composer require zezont4/ZAcl
+    composer require zezont4/acl
 ```
 2.  Add service provider & Aliases to **/config/app.php** file.
 ``` php
     'providers' => [
         \\ Other Providers,
-        Zezont4\ZAcl\ZAclServiceProvider::class,
+        Zezont4\ACL\ACLServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
     ],
 
