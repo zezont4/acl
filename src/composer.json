@@ -1,0 +1,37 @@
+{
+    "name": "zezont4/ACL (Access Control Layer)",
+    "type": "library",
+    "description": "Add ACL layer to your app and provide an interface to manage users,rules and permissions",
+    "keywords": [
+        "zezont4",
+        "heera",
+        "laravel",
+        "ACL"
+    ],
+    "homepage": "https://github.com/zezont4/acl",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Abdulaziz Tayyar",
+            "email": "zezont@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "~5.5|~7.0",
+        "laravelcollective/html": "5.2.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zezont4\\ACL\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "scripts": {
+        "post-update-cmd": [
+            "php artisan vendor:publish --force"
+        ]
+    }
+}
