@@ -12,11 +12,11 @@
     with some fixes , improvment and interface 
 ## Installation
 
-1.  Run
+1.Run
 ``` bash
-    composer require zezont4/acl
+    composer require zezont4/laravel-acl
 ```
-2.  Add service provider & Aliases to **/config/app.php** file.
+2.Add service provider & Aliases to **/config/app.php** file.
 ``` php
     'providers' => [
         \\ Other Providers,
@@ -30,7 +30,36 @@
         'Html' => Collective\Html\HtmlFacade::class,
     ],
 ```
+3.Add acl middleware to **app\Http\Kernel.php **
+``` php
+    protected $routeMiddleware = [
+         \\ Other routeMiddleware,
+        'acl' => \Zezont4\ACL\Middleware\CheckPermission::class,
+    ];
+```
+4.use UserTrait **app\User.php**
+``` php
+    class User extends Authenticatable
+    {
+        use \Zezont4\ACL\Models\UserTrait;
+        \\ the rest of the class
+    }
+```
+5.Use it like this in your routs
+``` php
+   Route::get('/users', [
+       'middleware' => 'acl:manage_user',
+       'as' => 'users.all',
+       'uses' => 'UserController@index'
+   ]);
+```
 
+### Blade directive
+``` php
+    @hasRole('manager')
+        ....
+    @endhasRole
+```
 ## Credits
 
 - [Abdulaziz Tayyer][link-author]

@@ -25,4 +25,16 @@ class ACLServiceProvider extends ServiceProvider
     {
         //
     }
+
+    public function loadZezont4BladeDirectives()
+    {
+        \Blade::directive('hasRole', function ($role_slug) {
+            return "<?php if (auth()->check()) :
+				if (auth()->user()->hasRole{$role_slug}) : ?>";
+        });
+
+        \Blade::directive('endhasRole', function () {
+            return "<?php endif; endif; ?>";
+        });
+    }
 }
