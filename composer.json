@@ -1,5 +1,5 @@
 {
-    "name": "zezont4/ACL (Access Control Layer)",
+    "name": "zezont4/ACL",
     "type": "library",
     "description": "Add ACL layer to your app and provide an interface to manage users,rules and permissions",
     "keywords": [
