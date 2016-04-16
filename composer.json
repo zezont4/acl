@@ -8,7 +8,7 @@
         "laravel",
         "ACL"
     ],
-    "homepage": "https://github.com/zezont4/acl",
+    "homepage": "https://github.com/zezont4/laravel-acl",
     "license": "MIT",
     "authors": [
         {

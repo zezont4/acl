@@ -24,7 +24,7 @@ class Role extends Model
      */
     public function users()
     {
-        return $this->belongsToMany('App\User');
+        return $this->belongsToMany(config('acl.user_model','App\User'));
     }
 
     /**

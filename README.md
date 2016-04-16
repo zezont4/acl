@@ -34,7 +34,7 @@
 ``` php
     protected $routeMiddleware = [
          \\ Other routeMiddleware,
-        'acl' => \Zezont4\ACL\Middleware\CheckPermission::class,
+        'acl' => \Zezont4\ACL\Http\Middleware\CheckPermission::class,
     ];
 ```
 4.use UserTrait **app\User.php**
@@ -45,7 +45,11 @@
         \\ the rest of the class
     }
 ```
-5.Use it like this in your routs
+5.Publish assets and config file
+``` bash
+    php artisan vendor:publish --provider="Zezont4\ACL\ACLServiceProvider" --tag="config" --tag="assets"
+```
+6.Use it like this in your routs
 ``` php
    Route::get('/users', [
        'middleware' => 'acl:manage_user',
@@ -73,8 +77,8 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/zezont4/laravel-generator.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/zezont4/z-acl
-[link-downloads]: https://packagist.org/packages/zezont4/z-acl
+[link-packagist]: https://packagist.org/packages/zezont4/laravel-acl
+[link-downloads]: https://packagist.org/packages/zezont4/laravel-acl
 [link-author]: https://github.com/zezont4
 [link-heera]: https://github.com/heera
 [link-contributors]: ../../contributors

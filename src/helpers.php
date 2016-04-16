@@ -1,7 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: zezo
- * Date: 4/12/2016
- * Time: 8:23 AM
- */
+if (!function_exists('translate')) {
+	function translate($field_name)
+	{
+		$trans1 = config('acl_lang.' . $field_name);
+		if (str_contains($trans1, '.')) {
+			return ucwords(str_replace("_", " ",$field_name));
+		}
+
+		return $trans1;
+	}
+}

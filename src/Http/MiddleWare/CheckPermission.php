@@ -1,6 +1,6 @@
 <?php
 
-namespace Zezont4\ACL\Middleware;
+namespace Zezont4\ACL\Http\Middleware;
 
 use Closure;
 
@@ -15,8 +15,12 @@ class CheckPermission
      */
     public function handle($request, Closure $next, $permission = null)
     {
-        if (!app('Illuminate\Contracts\Auth\Guard')->guest()) {
-            if ($request->user()->may($permission)) {
+//		var_dump($request->all());
+//		var_dump($next);
+//		dd($permission);
+
+        if (auth()->check()) {
+            if ($request->user()->allowedTo($permission)) {
                 return $next($request);
             }
         }
