@@ -64,7 +64,7 @@ class ACLServiceProvider extends ServiceProvider
     {
         \Blade::directive('hasRole', function ($role_slug) {
             return "<?php if (auth()->check()) :
-				if (auth()->user()->hasRole{$role_slug}) : ?>";
+				if (auth()->user()->hasRole({$role_slug})) : ?>";
         });
 
         \Blade::directive('endhasRole', function () {

@@ -2,10 +2,10 @@
 
 namespace Zezont4\ACL\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests;
-use Zezont4\ACL\Http\Requests\ACLUserRequest;
-use App\User;
+use \App\Http\Controllers\Controller;
+use \App\Http\Requests;
+use \Zezont4\ACL\Http\Requests\ACLUserRequest;
+use \App\User;
 
 class ACLUserController extends Controller
 {
